@@ -1,0 +1,7 @@
+{
+  "name": "Fazbear Security Hub",
+  "description": "A retro-styled FNAF security camera system allowing multiple tabs to act as cameras or monitors.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

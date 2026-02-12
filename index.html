@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fazbear Security Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+      body {
+        background-color: #000;
+        color: #33ff00;
+        font-family: 'VT323', monospace;
+        overflow: hidden;
+      }
+
+      /* CRT Scanline Effect */
+      .scanlines {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 0.2) 50%,
+          rgba(0, 0, 0, 0.2)
+        );
+        background-size: 100% 4px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        pointer-events: none;
+      }
+
+      /* Screen Flicker */
+      @keyframes flicker {
+        0% { opacity: 0.97; }
+        5% { opacity: 0.95; }
+        10% { opacity: 0.9; }
+        15% { opacity: 0.95; }
+        20% { opacity: 0.99; }
+        25% { opacity: 0.95; }
+        30% { opacity: 0.9; }
+        35% { opacity: 0.96; }
+        40% { opacity: 0.98; }
+        45% { opacity: 0.95; }
+        50% { opacity: 0.99; }
+        55% { opacity: 0.93; }
+        60% { opacity: 0.9; }
+        65% { opacity: 0.96; }
+        70% { opacity: 1; }
+        75% { opacity: 0.97; }
+        80% { opacity: 0.95; }
+        85% { opacity: 0.92; }
+        90% { opacity: 0.98; }
+        95% { opacity: 0.95; }
+        100% { opacity: 0.97; }
+      }
+
+      .crt-flicker {
+        animation: flicker 0.15s infinite;
+      }
+
+      /* Static Noise */
+      .noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 40;
+        opacity: 0.05;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJ4D30zAAAACHRSTlMAMwAqzMzM/wO30h4AAAB4SURBVDjLxZFJDsAgDAQT/v9j+oCoUuWcconLzBBrrK213t6vq729/w6yd2Y/O7M3s2dmz8x+d2Z/O/M3s29mPzuzN7NnZs/Mfindz/LzM3t2Zt/MfnZmb2bPzJ6Z/e7M/nbmb2bfzH52Zm9mz8yemb0z+9mZvZk9M3sD6y82HT9yBzwAAAAASUVORK5CYII=');
+      }
+
+      /* Text Shadow for Glow */
+      .text-glow {
+        text-shadow: 0 0 5px #33ff00, 0 0 10px #33ff00;
+      }
+      
+      .text-glow-red {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "uuid": "https://esm.sh/uuid@^13.0.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
